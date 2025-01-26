@@ -2,48 +2,38 @@
   <section
     class="contact-section grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 py-8 w-full"
   >
-    <!-- Composant Mockup Téléphone -->
-    <div class="phone-mockup">
-      <div class="mockup-phone">
-        <div class="camera"></div>
-        <div class="display">
-          <div class="artboard artboard-demo phone-1">
-            <div class="chat chat-start">
-              <div class="chat-bubble chat-bubble-info">
-                Hey, I’m tired of all<br />these repetitive tasks!
-              </div>
-            </div>
-            <div class="chat chat-end">
-              <div class="chat-bubble chat-bubble-accent">
-                Why not automate them?
-              </div>
-            </div>
-            <div class="chat chat-start">
-              <div class="chat-bubble chat-bubble-info">Automate? But how?</div>
-            </div>
-            <div class="chat chat-end">
-              <div class="chat-bubble chat-bubble-accent">
-                With my help!<br />
-                I create <strong>custom applications</strong><br />
-                that streamline your processes.
-              </div>
-            </div>
-            <div class="chat chat-start">
-              <div class="chat-bubble chat-bubble-info">
-                That sounds amazing!
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="contact-info space-y-6 flex items-center">
+      <ul class="space-y-4">
+        <li class="flex items-center text-gray-700 dark:text-gray-300">
+          <Phone class="w-6 h-6 text-primary mr-3" />
+          <span>+33 6 22 63 90 26</span>
+        </li>
+
+        <!-- E-mail -->
+        <li class="flex items-center text-gray-700 dark:text-gray-300">
+          <Mail class="w-6 h-6 text-primary mr-3" />
+          <a
+            href="mailto:your.email@example.com"
+            class="link link-hover text-gray-700 dark:text-gray-300"
+          >
+            contact@aminefodilcherif.com
+          </a>
+        </li>
+
+        <!-- Localisation -->
+        <li class="flex items-center text-gray-700 dark:text-gray-300">
+          <MapPin class="w-6 h-6 text-primary mr-3" />
+          <span>Bordeaux, France</span>
+        </li>
+      </ul>
     </div>
 
+    <!-- Partie droite : Formulaire -->
     <div class="contact-form">
       <h2 class="text-3xl font-bold text-primary mb-6">Get in Touch</h2>
 
       <p class="text-gray-500 mb-4">
-        Have a project in mind? Great! I'm freelancing, feel free to reach out
-        to me.
+        If you have any questions, feel free to contact me.
       </p>
 
       <form @submit.prevent="sendEmail">
@@ -55,6 +45,7 @@
             name="first-name"
             placeholder="First Name"
             class="input input-bordered w-full"
+            v-model="formData.firstName"
           />
         </div>
 
@@ -66,6 +57,7 @@
             name="last-name"
             placeholder="Last Name"
             class="input input-bordered w-full"
+            v-model="formData.lastName"
           />
         </div>
 
@@ -77,20 +69,29 @@
             name="email"
             placeholder="Email"
             class="input input-bordered w-full"
+            v-model="formData.email"
           />
         </div>
 
         <div class="mb-4">
-          <label for="project-details" class="label">Project Details</label>
+          <label for="project-details" class="label">Details</label>
           <textarea
             id="project-details"
             name="project-details"
             class="textarea textarea-bordered w-full"
-            placeholder="Tell me about your project"
+            placeholder="Tell me about what you want to know!"
+            v-model="formData.projectDetails"
           ></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button
+          type="submit"
+          class="btn btn-primary flex items-center justify-center"
+          :disabled="isLoading"
+        >
+          <span v-if="isLoading" class="loading loading-spinner mr-2"></span>
+          <span>{{ isLoading ? "Sending..." : "Submit" }}</span>
+        </button>
       </form>
 
       <!-- Messages de succès ou d'erreur -->
@@ -132,21 +133,48 @@
 </template>
 
 <script>
+import { Phone, Mail, MapPin } from "@iconoir/vue";
 import emailjs from "emailjs-com";
 
 export default {
   name: "ContactSection",
+  components: {
+    Phone,
+    Mail,
+    MapPin,
+  },
   data() {
     return {
       successMessage: "",
       errorMessage: "",
+      isLoading: false,
+      formData: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        projectDetails: "",
+      },
     };
   },
   methods: {
     sendEmail(e) {
-      const form = e.target;
+      // Vérifier si tous les champs sont remplis
+      if (
+        !this.formData.firstName ||
+        !this.formData.lastName ||
+        !this.formData.email ||
+        !this.formData.projectDetails
+      ) {
+        this.errorMessage = "Please fill out all the fields.";
+        this.successMessage = "";
+        return;
+      }
 
+      const form = e.target;
       const config = useRuntimeConfig();
+
+      // Activer le spinner
+      this.isLoading = true;
 
       emailjs
         .sendForm(
@@ -162,13 +190,24 @@ export default {
             this.errorMessage = "";
             console.log(result.text);
             form.reset();
+            // Réinitialiser les champs après envoi
+            this.formData = {
+              firstName: "",
+              lastName: "",
+              email: "",
+              projectDetails: "",
+            };
           },
           (error) => {
             this.errorMessage = "Failed to send email, please try again later.";
             this.successMessage = "";
             console.log(error.text);
           }
-        );
+        )
+        .finally(() => {
+          // Désactiver le spinner
+          this.isLoading = false;
+        });
     },
   },
 };

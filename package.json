@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "my-portfolio",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,9 +12,10 @@
   "dependencies": {
     "@iconoir/vue": "^7.9.0",
     "emailjs-com": "^3.2.0",
+    "my-portfolio": "file:",
     "nuxt": "^3.13.0",
-    "nuxt-app": "file:",
     "vue": "latest",
+    "vue-i18n": "^11.0.1",
     "vue-router": "latest"
   },
   "devDependencies": {

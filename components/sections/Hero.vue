@@ -3,22 +3,25 @@
     <div class="hero-content text-center">
       <div class="max-w-md">
         <div @mousemove="updateImagePosition">
-          <h1 class="text-6xl font-bold text-blue-600">Hello there! 👋🏽</h1>
+          <h1 class="text-6xl font-bold text-blue-600">
+            {{ $t("hero.title") }}
+          </h1>
           <p class="py-6 text-3xl">
-            I'm a software engineer based in
+            {{ $t("hero.description.start") }}
             <strong
               @mouseenter="showImage"
               @mouseleave="hideImage"
               id="bordeaux"
             >
-              Bordeaux </strong
-            >, <strong>France</strong>.
+              {{ $t("hero.description.bordeaux") }}
+            </strong>
+            , {{ $t("hero.description.france") }}.
           </p>
 
           <img
             v-if="isImageVisible"
             :src="imageSrc"
-            alt="Bordeaux > Toulouse"
+            :alt="$t('hero.imageAlt')"
             class="absolute w-32 h-32"
             :style="{
               left: imagePosition.x + 'px',
@@ -34,12 +37,12 @@
           class="btn btn-primary"
           @click="scrollToContact"
         >
-          Say Hi
+          {{ $t("hero.button") }}
         </button>
 
         <img
           src="/images/hello.gif"
-          alt="Duck"
+          :alt="$t('hero.duckAlt')"
           class="fixed top-1/2 transform -translate-y-1/2 transition-transform duration-500 ease-out rotate-90"
           :class="{
             'translate-x-[-150%]': !showingDuck,

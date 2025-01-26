@@ -13,13 +13,13 @@ import {
     <aside class="grid-flow-col items-center">
       <PeaceHand />
       <p>
-        Made with ❤️ by Amine using
+        {{ $t("footer.madeWith") }}
         <a
           href="https://nuxtjs.org"
           target="_blank"
           class="text-green-600 font-bold"
         >
-          Nuxt3
+          {{ $t("footer.nuxt") }}
         </a>
       </p>
     </aside>

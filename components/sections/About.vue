@@ -4,46 +4,78 @@
   >
     <div class="introduction flex flex-col items-center w-full">
       <!-- Titre de la section -->
-      <h2 class="text-3xl font-bold text-primary mb-6">A few words about me</h2>
+      <h2 class="text-3xl font-bold text-primary mb-6">
+        {{ $t("about.introduction.title") }}
+      </h2>
 
       <div class="text-lg text-gray-700 p-6">
         <!-- Première phrase -->
         <p class="mb-4">
-          I'm <span class="font-bold text-accent">Amine FODIL-CHERIF</span>, a
-          <span class="font-bold text-accent">full-stack developer</span> based
-          in <span class="font-bold text-accent">Bordeaux</span>, currently
-          working as a
-          <span class="font-bold text-accent">software engineer</span> at
-          <a href="https://www.ipanipan.com" class="text-accent font-bold"
-            >IPAN IPAN</a
-          >, where I am responsible for developing applications for both
-          <span class="text-accent font-bold">internal teams</span> and
-          <span class="text-accent font-bold">external clients</span>.
+          {{ $t("about.introduction.paragraph1.part1") }}
+          <span class="font-bold text-accent">{{
+            $t("about.introduction.name")
+          }}</span
+          >,
+          {{ $t("about.introduction.paragraph1.part2") }}
+          <span class="font-bold text-accent">{{
+            $t("about.introduction.jobTitle")
+          }}</span>
+          {{ $t("about.introduction.paragraph1.part3") }}
+          <span class="font-bold text-accent">{{
+            $t("about.introduction.location")
+          }}</span
+          >,
+          {{ $t("about.introduction.paragraph1.part4") }}
+          <a
+            href="https://www.ipanipan.com"
+            target="_blank"
+            class="text-primary font-bold"
+            >{{ $t("about.introduction.company") }}</a
+          >,
+          {{ $t("about.introduction.paragraph1.part5") }}
+          <span class="text-accent font-bold">{{
+            $t("about.introduction.internalTeams")
+          }}</span>
+          {{ $t("about.introduction.and") }}
+          <span class="text-accent font-bold">{{
+            $t("about.introduction.externalClients")
+          }}</span
+          >.
         </p>
 
         <p>
-          I specialize in creating
-          <span class="font-bold text-accent">streamlined</span>,
-          <span class="font-bold text-accent">powerful</span>, and
-          <span class="font-bold text-accent">highly intuitive</span>
-          applications that optimize processes and improve user experiences.
+          {{ $t("about.introduction.paragraph2.part1") }}
+          <span class="font-bold text-accent">{{
+            $t("about.introduction.paragraph2.streamlined")
+          }}</span
+          >,
+          <span class="font-bold text-accent">{{
+            $t("about.introduction.paragraph2.powerful")
+          }}</span
+          >,
+          {{ $t("about.introduction.and") }}
+          <span class="font-bold text-accent">{{
+            $t("about.introduction.paragraph2.intuitive")
+          }}</span>
+          {{ $t("about.introduction.paragraph2.part2") }}.
         </p>
       </div>
     </div>
 
     <div class="timeline flex flex-col items-center w-full">
       <div>
-        <h2 class="text-3xl font-bold text-primary mb-6">Education</h2>
+        <h2 class="text-3xl font-bold text-primary mb-6">
+          {{ $t("about.timeline.title") }}
+        </h2>
       </div>
       <div class="w-full">
         <ul class="timeline timeline-vertical space-y-4">
           <li>
             <hr />
             <div class="timeline-start timeline-box">
-              CESI - Engineering School - 2024
+              {{ $t("about.timeline.cesi2024.title") }}
               <p class="italic text-gray-500 mb-2 text-sm">
-                Master's - Manager in Software Application Architecture (In
-                Progress)
+                {{ $t("about.timeline.cesi2024.description") }}
               </p>
             </div>
             <hr />
@@ -51,9 +83,9 @@
           <li>
             <hr />
             <div class="timeline-end timeline-box">
-              CESI - Engineering School - 2023
+              {{ $t("about.timeline.cesi2023.title") }}
               <p class="italic text-gray-500 mb-2 text-sm">
-                Bachelor's - Application Design and Development (Achieved)
+                {{ $t("about.timeline.cesi2023.description") }}
               </p>
             </div>
             <hr />
@@ -61,9 +93,9 @@
           <li>
             <hr />
             <div class="timeline-start timeline-box">
-              ESG - Business School - 2022
+              {{ $t("about.timeline.esg2022.title") }}
               <p class="italic text-gray-500 mb-2 text-sm">
-                Bachelor's - Business & Marketing (Achieved)
+                {{ $t("about.timeline.esg2022.description") }}
               </p>
             </div>
             <hr />
