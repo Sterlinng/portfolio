@@ -23,38 +23,57 @@
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
         >
           <li>
-            <a href="#hero"><Home />Home</a>
+            <a href="/#hero"><Home />{{ $t("navbar.home") }}</a>
           </li>
           <li>
-            <a href="#about"><Emoji />About</a>
+            <a href="/#about"><Emoji />{{ $t("navbar.about") }}</a>
           </li>
           <li>
-            <a href="#technologies"><Cpu />Technologies</a>
+            <a href="/#technologies"><Cpu />{{ $t("navbar.technologies") }}</a>
           </li>
           <li>
-            <a href="#projects"><Suitcase />Projects</a>
+            <a href="/#projects"><Suitcase />{{ $t("navbar.projects") }}</a>
           </li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl">Amine.</a>
+      <a class="btn btn-ghost text-xl" href="/">{{ $t("navbar.brand") }}</a>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
         <li>
-          <a href="#hero"><Home />Home</a>
+          <a href="/#hero"><Home />{{ $t("navbar.home") }}</a>
         </li>
         <li>
-          <a href="#about"><Emoji />About</a>
+          <a href="/#about"><Emoji />{{ $t("navbar.about") }}</a>
         </li>
         <li>
-          <a href="#technologies"><Cpu />Technologies</a>
+          <a href="/#projects"><Suitcase />{{ $t("navbar.projects") }}</a>
         </li>
         <li>
-          <a href="#projects"><Suitcase />Projects</a>
+          <a href="/#contact"><Mail />{{ $t("navbar.contact") }}</a>
         </li>
       </ul>
     </div>
     <div class="navbar-end">
+      <div class="dropdown" style="margin-right: 20px">
+        <div tabindex="0" role="button" class="btn btn-ghost hover:bg-base-200">
+          <Translate /><NavArrowDown />
+        </div>
+        <ul
+          tabindex="0"
+          class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+        >
+          <li
+            v-for="lang in languages"
+            :key="lang.code"
+            @click="changeLanguage(lang.code)"
+          >
+            <a :class="{ 'bg-base-200': lang.code === currentLocale }">
+              {{ lang.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
       <label class="swap swap-rotate" style="margin-right: 20px">
         <input type="checkbox" class="theme-controller" value="retro" />
         <svg
@@ -76,11 +95,34 @@
           />
         </svg>
       </label>
-      <a href="#contact" class="btn btn-primary"><SendDiagonal />Contact</a>
     </div>
   </div>
 </template>
 
 <script setup>
-import { Home, Suitcase, Cpu, Emoji, SendDiagonal } from "@iconoir/vue";
+import {
+  Home,
+  Suitcase,
+  Cpu,
+  Emoji,
+  Translate,
+  Mail,
+  NavArrowDown,
+} from "@iconoir/vue";
+
+import { useI18n } from "vue-i18n";
+
+const languages = [
+  { code: "en-US", label: "English" },
+  { code: "fr-FR", label: "Français" },
+];
+
+const { locale } = useI18n();
+
+const currentLocale = computed(() => locale.value);
+
+const changeLanguage = (lang) => {
+  locale.value = lang;
+  localStorage.setItem("preferredLanguage", lang);
+};
 </script>

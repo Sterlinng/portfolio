@@ -1,0 +1,95 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "technologies": "Technologies",
+    "projects": "Projets",
+    "brand": "Amine.",
+    "contact": "Contact",
+    "languages": {
+      "english": "Anglais",
+      "french": "Français"
+    }
+  },
+  "hero": {
+    "title": "Salut ! 👋🏽",
+    "description": {
+      "start": "Je suis un développeur logiciel basé à",
+      "bordeaux": "Bordeaux",
+      "france": "France"
+    },
+    "imageAlt": "Bordeaux > Toulouse",
+    "button": "Dire Bonjour",
+    "duckAlt": "Canard"
+  },
+  "about": {
+    "introduction": {
+      "title": "Quelques mots sur moi",
+      "name": "Amine FODIL-CHERIF",
+      "jobTitle": "ingénieur logiciel",
+      "location": "Bordeaux",
+      "company": "IPAN IPAN",
+      "internalTeams": "équipes internes",
+      "externalClients": "clients externes",
+      "and": "et",
+      "paragraph1": {
+        "part1": "Je suis",
+        "part2": "un",
+        "part3": "basé à",
+        "part4": "travaillant actuellement chez",
+        "part5": "où je suis responsable du développement d'applications pour"
+      },
+      "paragraph2": {
+        "part1": "Je me spécialise dans la création d'applications",
+        "streamlined": "optimisées",
+        "powerful": "puissantes",
+        "intuitive": "très intuitives",
+        "part2": "qui optimisent les processus et améliorent l'expérience utilisateur"
+      }
+    },
+    "timeline": {
+      "title": "Formation",
+      "cesi2024": {
+        "title": "CESI - École d'Ingénieurs - 2024",
+        "description": "Master - Manager en Architecture Logicielle (En cours)"
+      },
+      "cesi2023": {
+        "title": "CESI - École d'Ingénieurs - 2023",
+        "description": "Bachelor - Conception et Développement d'Applications (Validé)"
+      },
+      "esg2022": {
+        "title": "ESG - École de Commerce - 2022",
+        "description": "Bachelor - Business & Marketing (Validé)"
+      }
+    }
+  },
+  "footer": {
+    "madeWith": "Fait avec ❤️ par Amine avec",
+    "nuxt": "Nuxt3"
+  },
+  "aboutProjects": {
+    "title": "À propos de mes projets",
+    "description1": "Certains projets que j'ai réalisés ne sont pas accessibles publiquement en raison de leur nature confidentielle. Ils ont été développés dans un cadre professionnel ou avec des clients nécessitant une clause de confidentialité.",
+    "description2": "Si vous souhaitez en savoir plus sur ces expériences, n'hésitez pas à me",
+    "contact": "contacter"
+  },
+  "projects": {
+    "confidential": "Projet confidentiel",
+    "archive": "Voir l'archive complète des projets"
+  },
+  "projectList": {
+    "orderingPlatform": {
+      "title": "Plateforme de commande",
+      "subtitle": "Une application de commande pour McDonald's en partenariat avec l'entreprise pour laquelle je travaille."
+    },
+    "erpIntegration": {
+      "title": "Intégration ERP",
+      "subtitle": "Une application interne pour l'entreprise pour laquelle je travaille."
+    }
+  },
+  "sections": {
+    "about": "QUI SUIS-JE ?",
+    "projects": "PROJETS",
+    "contact": "CONTACT"
+  }
+}

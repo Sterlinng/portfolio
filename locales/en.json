@@ -1,0 +1,95 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "technologies": "Technologies",
+    "projects": "Projects",
+    "brand": "Amine.",
+    "contact": "Contact",
+    "languages": {
+      "english": "English",
+      "french": "French"
+    }
+  },
+  "hero": {
+    "title": "Hello there! 👋🏽",
+    "description": {
+      "start": "I'm a software engineer based in",
+      "bordeaux": "Bordeaux",
+      "france": "France"
+    },
+    "imageAlt": "Bordeaux > Toulouse",
+    "button": "Say Hi",
+    "duckAlt": "Duck"
+  },
+  "about": {
+    "introduction": {
+      "title": "A few words about me",
+      "name": "Amine FODIL-CHERIF",
+      "jobTitle": "software engineer",
+      "location": "Bordeaux",
+      "company": "IPAN IPAN",
+      "internalTeams": "internal teams",
+      "externalClients": "external clients",
+      "and": "and",
+      "paragraph1": {
+        "part1": "I'm",
+        "part2": "a",
+        "part3": "based in",
+        "part4": "currently working at",
+        "part5": "where I am responsible for developing applications for both"
+      },
+      "paragraph2": {
+        "part1": "I specialize in creating",
+        "streamlined": "streamlined",
+        "powerful": "powerful",
+        "intuitive": "highly intuitive",
+        "part2": "applications that optimize processes and improve user experiences"
+      }
+    },
+    "timeline": {
+      "title": "Education",
+      "cesi2024": {
+        "title": "CESI - Engineering School - 2024",
+        "description": "Master's - Manager in Software Application Architecture (In Progress)"
+      },
+      "cesi2023": {
+        "title": "CESI - Engineering School - 2023",
+        "description": "Bachelor's - Application Design and Development (Achieved)"
+      },
+      "esg2022": {
+        "title": "ESG - Business School - 2022",
+        "description": "Bachelor's - Business & Marketing (Achieved)"
+      }
+    }
+  },
+  "footer": {
+    "madeWith": "Made with ❤️ by Amine using",
+    "nuxt": "Nuxt3"
+  },
+  "aboutProjects": {
+    "title": "About My Projects",
+    "description1": "Some of the projects I have worked on are not publicly accessible due to their confidential nature. They were developed in a professional setting or with clients requiring a confidentiality agreement.",
+    "description2": "If you would like to know more about these experiences, feel free to",
+    "contact": "contact me"
+  },
+  "projects": {
+    "confidential": "Confidential Project",
+    "archive": "View Full Project Archive"
+  },
+  "projectList": {
+    "orderingPlatform": {
+      "title": "Ordering Platform",
+      "subtitle": "An ordering application for McDonald's in partnership with the company I work for."
+    },
+    "erpIntegration": {
+      "title": "ERP Integration",
+      "subtitle": "An internal application for the company I work for."
+    }
+  },
+  "sections": {
+    "about": "WHO AM I ?",
+    "projects": "PROJECTS",
+    "contact": "CONTACT"
+  }
+}
