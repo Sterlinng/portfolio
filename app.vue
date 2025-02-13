@@ -1,40 +1,26 @@
 <template>
-  <Header />
-  <div class="inline-divider"></div>
-  <section id="hero">
-    <Hero />
-  </section>
-  <div class="divider">{{ $t("sections.about") }}</div>
-  <section id="about">
-    <About />
-  </section>
-  <div class="divider">{{ $t("sections.projects") }}</div>
-  <section id="projects">
-    <Projects />
-  </section>
-  <div class="divider">{{ $t("sections.contact") }}</div>
-  <section id="contact">
-    <Contact />
-  </section>
-  <Footer />
+  <div class="layout">
+    <Header />
+    <main class="content">
+      <NuxtPage />
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <script setup>
-import Header from "./components/shared/Header.vue";
-import Hero from "./components/sections/Hero.vue";
-import Projects from "./components/sections/Projects.vue";
-import About from "./components/sections/About.vue";
-import Contact from "./components/sections/Contact.vue";
-import Footer from "./components/shared/Footer.vue";
-import { useHead } from "nuxt/app";
-
-useHead({
-  title: "Amine - Portfolio",
-  link: [
-    {
-      rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css",
-    },
-  ],
-});
+import Header from "../components/shared/Header.vue";
+import Footer from "../components/shared/Footer.vue";
 </script>
+
+<style scoped>
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Utilise toute la hauteur de l'écran */
+}
+
+.content {
+  flex: 1; /* Prend tout l'espace disponible entre header et footer */
+}
+</style>

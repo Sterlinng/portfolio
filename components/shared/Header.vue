@@ -23,31 +23,34 @@
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
         >
           <li>
-            <a href="#hero"><Home />{{ $t("navbar.home") }}</a>
+            <a href="/#hero"><Home />{{ $t("navbar.home") }}</a>
           </li>
           <li>
-            <a href="#about"><Emoji />{{ $t("navbar.about") }}</a>
+            <a href="/#about"><Emoji />{{ $t("navbar.about") }}</a>
           </li>
           <li>
-            <a href="#technologies"><Cpu />{{ $t("navbar.technologies") }}</a>
+            <a href="/#technologies"><Cpu />{{ $t("navbar.technologies") }}</a>
           </li>
           <li>
-            <a href="#projects"><Suitcase />{{ $t("navbar.projects") }}</a>
+            <a href="/#projects"><Suitcase />{{ $t("navbar.projects") }}</a>
           </li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl">{{ $t("navbar.brand") }}</a>
+      <a class="btn btn-ghost text-xl" href="/">{{ $t("navbar.brand") }}</a>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
         <li>
-          <a href="#hero"><Home />{{ $t("navbar.home") }}</a>
+          <a href="/#hero"><Home />{{ $t("navbar.home") }}</a>
         </li>
         <li>
-          <a href="#about"><Emoji />{{ $t("navbar.about") }}</a>
+          <a href="/#about"><Emoji />{{ $t("navbar.about") }}</a>
         </li>
         <li>
-          <a href="#projects"><Suitcase />{{ $t("navbar.projects") }}</a>
+          <a href="/#projects"><Suitcase />{{ $t("navbar.projects") }}</a>
+        </li>
+        <li>
+          <a href="/#contact"><Mail />{{ $t("navbar.contact") }}</a>
         </li>
       </ul>
     </div>
@@ -103,6 +106,7 @@ import {
   Cpu,
   Emoji,
   Translate,
+  Mail,
   NavArrowDown,
 } from "@iconoir/vue";
 

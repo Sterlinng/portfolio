@@ -4,26 +4,44 @@
   >
     <div class="contact-info space-y-6 flex items-center">
       <ul class="space-y-4">
-        <li class="flex items-center text-gray-700 dark:text-gray-300">
-          <Phone class="w-6 h-6 text-primary mr-3" />
-          <span>+33 6 22 63 90 26</span>
-        </li>
-
         <!-- E-mail -->
-        <li class="flex items-center text-gray-700 dark:text-gray-300">
+        <li class="flex items-center text-green-600">
           <Mail class="w-6 h-6 text-primary mr-3" />
           <a
             href="mailto:your.email@example.com"
-            class="link link-hover text-gray-700 dark:text-gray-300"
+            target="_blank"
+            class="link link-hover text-green-600"
           >
             contact@aminefodilcherif.com
           </a>
         </li>
 
         <!-- Localisation -->
-        <li class="flex items-center text-gray-700 dark:text-gray-300">
+        <li class="flex items-center text-green-600">
           <MapPin class="w-6 h-6 text-primary mr-3" />
           <span>Bordeaux, France</span>
+        </li>
+
+        <li class="flex items-center text-green-600">
+          <Github class="w-6 h-6 text-primary mr-3" />
+          <a
+            href="https://github.com/Sterlinng"
+            target="_blank"
+            class="link link-hover text-green-600"
+          >
+            GitHub
+          </a>
+        </li>
+
+        <li class="flex items-center text-green-600">
+          <Linkedin class="w-6 h-6 text-primary mr-3" />
+          <a
+            href="https://www.linkedin.com/in/amine-fodil-cherif-961805206/"
+            target="_blank"
+            class="link link-hover text-green-600"
+          >
+            Linkedin
+          </a>
         </li>
       </ul>
     </div>
@@ -133,7 +151,7 @@
 </template>
 
 <script>
-import { Phone, Mail, MapPin } from "@iconoir/vue";
+import { Phone, Mail, MapPin, Github, Linkedin } from "@iconoir/vue";
 import emailjs from "emailjs-com";
 
 export default {
@@ -142,6 +160,8 @@ export default {
     Phone,
     Mail,
     MapPin,
+    Github,
+    Linkedin,
   },
   data() {
     return {

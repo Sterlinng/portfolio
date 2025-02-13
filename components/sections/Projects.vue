@@ -54,7 +54,9 @@
         </div>
       </div>
       <div style="margin-top: 20px; margin-bottom: 20px">
-        <a class="link link-hover">{{ $t("projects.archive") }}</a>
+        <a class="link link-hover" href="/projects">{{
+          $t("projects.archive")
+        }}</a>
       </div>
     </div>
   </div>
