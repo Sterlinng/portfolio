@@ -75,21 +75,67 @@
   },
   "projects": {
     "confidential": "Projet confidentiel",
-    "archive": "Voir l'archive complète des projets"
+    "archive": "Voir l'archive complète des projets",
+    "portfolioWebsite": {
+      "title": "Site Portfolio",
+      "context": "Personnel",
+      "description": "Mon site personnel présentant mon travail et mes projets."
+    },
+    "orderingPlatform": {
+      "title": "Plateforme de Commande",
+      "context": "Professionnel",
+      "description": "Une application de commande pour McDonald's en partenariat avec l'entreprise pour laquelle je travaille."
+    },
+    "volunteeringPlatform": {
+      "title": "Plateforme de Bénévolat",
+      "context": "Personnel",
+      "description": "Une plateforme gouvernementale simulée pour faciliter et encourager l'engagement communautaire. Inclut une application mobile."
+    },
+    "databaseInterface": {
+      "title": "Interface Base de Données",
+      "context": "Professionnel",
+      "description": "Une application CRUD avec une interface front-end intuitive."
+    },
+    "erpIntegration": {
+      "title": "Intégration ERP",
+      "context": "Professionnel",
+      "description": "Une application interne pour l'entreprise pour laquelle je travaille, conçue pour simplifier les opérations internes."
+    },
+    "browserLogicGame": {
+      "title": "Jeu de Logique Navigateur",
+      "context": "Personnel",
+      "description": "Un petit jeu de logique réalisé pendant mes études."
+    },
+    "spotifyPosterMaker": {
+      "title": "Générateur de Posters Spotify",
+      "context": "Personnel",
+      "description": "Un générateur de posters Spotify, permettant de créer des posters personnalisées à partir de données Spotify."
+    }
   },
   "projectList": {
     "orderingPlatform": {
       "title": "Plateforme de commande",
       "subtitle": "Une application de commande pour McDonald's en partenariat avec l'entreprise pour laquelle je travaille."
     },
-    "erpIntegration": {
-      "title": "Intégration ERP",
-      "subtitle": "Une application interne pour l'entreprise pour laquelle je travaille."
+    "spotifyPosterMaker": {
+      "title": "Générateur de Posters Spotify",
+      "subtitle": "Un générateur de posters Spotify, permettant de créer des posters personnalisées à partir de données Spotify."
     }
   },
   "sections": {
     "about": "QUI SUIS-JE ?",
     "projects": "PROJETS",
     "contact": "CONTACT"
+  },
+  "projectsTable": {
+    "year": "Année",
+    "project": "Projet",
+    "context": "Contexte",
+    "description": "Description",
+    "builtWith": "Technologies",
+    "link": "Lien",
+    "view": "Voir",
+    "notAvailable": "Non disponible",
+    "title": "Projets"
   }
 }

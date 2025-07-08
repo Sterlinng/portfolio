@@ -75,12 +75,47 @@
   },
   "projects": {
     "confidential": "Confidential Project",
-    "archive": "View Full Project Archive"
-  },
-  "projectList": {
+    "archive": "View Full Project Archive",
+    "portfolioWebsite": {
+      "title": "Portfolio Website",
+      "context": "Personal",
+      "description": "My personal website showcasing my work and projects."
+    },
     "orderingPlatform": {
       "title": "Ordering Platform",
-      "subtitle": "An ordering application for McDonald's in partnership with the company I work for."
+      "context": "Professional",
+      "description": "An ordering application for McDonald's in partnership with the company I work for."
+    },
+    "volunteeringPlatform": {
+      "title": "Volunteering Platform",
+      "context": "Personal",
+      "description": "A simulated government volunteering platform designed to facilitate and encourage community engagement. Includes a mobile application."
+    },
+    "databaseInterface": {
+      "title": "Database Interface",
+      "context": "Professional",
+      "description": "A CRUD-based application with an intuitive front-end interface."
+    },
+    "erpIntegration": {
+      "title": "ERP Integration",
+      "context": "Professional",
+      "description": "An internal application for the company I work for, designed to simplify internal operations."
+    },
+    "browserLogicGame": {
+      "title": "Browser Logic Game",
+      "context": "Personal",
+      "description": "A basic logic game made during my time in college."
+    },
+    "spotifyPosterMaker": {
+      "title": "Spotify Poster Maker",
+      "context": "Personal",
+      "description": "A web application that generates posters based on Spotify data."
+    }
+  },
+  "projectList": {
+    "spotifyPosterMaker": {
+      "title": "Spotify Poster Maker",
+      "subtitle": "A web application that generates posters based on Spotify data."
     },
     "erpIntegration": {
       "title": "ERP Integration",
@@ -91,5 +126,16 @@
     "about": "WHO AM I ?",
     "projects": "PROJECTS",
     "contact": "CONTACT"
+  },
+  "projectsTable": {
+    "year": "Year",
+    "project": "Project",
+    "context": "Context",
+    "description": "Description",
+    "builtWith": "Built With",
+    "link": "Link",
+    "view": "View",
+    "notAvailable": "Not Available",
+    "title": "All Projects"
   }
 }

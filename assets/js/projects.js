@@ -1,16 +1,16 @@
 export default [
   {
-    title: "projectList.orderingPlatform.title",
+    title: "projectList.spotifyPosterMaker.title",
     client: "McDonald's",
-    subtitle: "projectList.orderingPlatform.subtitle",
+    subtitle: "projectList.spotifyPosterMaker.subtitle",
     technos: [
-      { name: "Nuxt3" },
-      { name: "Quarkus" },
-      { name: "AntDV" },
-      { name: "PostgreSQL" },
+      { name: "React" },
+      { name: "Shadcn" },
+      { name: "Netlify" },
+      { name: "Spotify API" },
     ],
-    link: "#",
-    isConfidential: true,
+    link: "https://postermaker.aminefodilcherif.com",
+    isConfidential: false,
   },
   {
     title: "projectList.erpIntegration.title",
