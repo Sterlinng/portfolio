@@ -9,7 +9,7 @@ import {
 </script>
 
 <template>
-  <footer class="footer items-center p-4">
+  <footer class="footer items-center p-4 relative z-10" style="background: transparent;">
     <aside class="grid-flow-col items-center">
       <PeaceHand />
       <p>

@@ -1,168 +1,132 @@
 <template>
-  <section
-    class="contact-section grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 py-8 w-full"
-  >
-    <div class="contact-info space-y-6 flex items-center">
-      <ul class="space-y-4">
-        <!-- E-mail -->
-        <li class="flex items-center text-green-600">
-          <Mail class="w-6 h-6 text-primary mr-3" />
-          <a
-            href="mailto:your.email@example.com"
-            target="_blank"
-            class="link link-hover text-green-600"
-          >
-            contact@aminefodilcherif.com
-          </a>
-        </li>
+  <section class="relative py-12 px-6 sm:px-12 lg:px-20">
+    <div class="max-w-4xl mx-auto">
 
-        <!-- Localisation -->
-        <li class="flex items-center text-green-600">
-          <MapPin class="w-6 h-6 text-primary mr-3" />
-          <span>Bordeaux, France</span>
-        </li>
-
-        <li class="flex items-center text-green-600">
-          <Github class="w-6 h-6 text-primary mr-3" />
-          <a
-            href="https://github.com/Sterlinng"
-            target="_blank"
-            class="link link-hover text-green-600"
-          >
-            GitHub
-          </a>
-        </li>
-
-        <li class="flex items-center text-green-600">
-          <Linkedin class="w-6 h-6 text-primary mr-3" />
-          <a
-            href="https://www.linkedin.com/in/amine-fodil-cherif-961805206/"
-            target="_blank"
-            class="link link-hover text-green-600"
-          >
-            Linkedin
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Partie droite : Formulaire -->
-    <div class="contact-form">
-      <h2 class="text-3xl font-bold text-primary mb-6">Get in Touch</h2>
-
-      <p class="text-gray-500 mb-4">
-        If you have any questions, feel free to contact me.
-      </p>
-
-      <form @submit.prevent="sendEmail">
-        <div class="mb-4">
-          <label for="first-name" class="label">First Name</label>
-          <input
-            type="text"
-            id="first-name"
-            name="first-name"
-            placeholder="First Name"
-            class="input input-bordered w-full"
-            v-model="formData.firstName"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="last-name" class="label">Last Name</label>
-          <input
-            type="text"
-            id="last-name"
-            name="last-name"
-            placeholder="Last Name"
-            class="input input-bordered w-full"
-            v-model="formData.lastName"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="email" class="label">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            class="input input-bordered w-full"
-            v-model="formData.email"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="project-details" class="label">Details</label>
-          <textarea
-            id="project-details"
-            name="project-details"
-            class="textarea textarea-bordered w-full"
-            placeholder="Tell me about what you want to know!"
-            v-model="formData.projectDetails"
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          class="btn btn-primary flex items-center justify-center"
-          :disabled="isLoading"
-        >
-          <span v-if="isLoading" class="loading loading-spinner mr-2"></span>
-          <span>{{ isLoading ? "Sending..." : "Submit" }}</span>
-        </button>
-      </form>
-
-      <!-- Messages de succès ou d'erreur -->
-      <div v-if="successMessage" role="alert" class="alert alert-success mt-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 shrink-0 stroke-current"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-        <span>{{ successMessage }}</span>
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-sm uppercase tracking-wider text-secondary font-semibold mb-4">{{ $t("sections.contact") }}</h2>
+        <h3 class="text-4xl sm:text-5xl font-bold text-primary mb-6">Get in Touch</h3>
+        <p class="text-lg text-secondary max-w-2xl mx-auto">
+          Have a project in mind or just want to chat? Drop me a message and I'll get back to you as soon as possible.
+        </p>
       </div>
 
-      <div v-if="errorMessage" role="alert" class="alert alert-error mt-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 shrink-0 stroke-current"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-        <span>{{ errorMessage }}</span>
+      <!-- Contact Form -->
+      <div class="bg-base-200 rounded-2xl p-8 sm:p-12">
+
+        <form @submit.prevent="sendEmail" class="space-y-6">
+          <!-- Name Fields (side by side) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="first-name" class="block text-sm font-medium text-secondary mb-2">
+                First Name
+              </label>
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="John"
+                class="w-full px-4 py-3 rounded-lg bg-base-100 border border-base-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all hover:border-accent/50 focus:scale-[1.02]"
+                v-model="formData.firstName"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="last-name" class="block text-sm font-medium text-secondary mb-2">
+                Last Name
+              </label>
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Doe"
+                class="w-full px-4 py-3 rounded-lg bg-base-100 border border-base-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all hover:border-accent/50 focus:scale-[1.02]"
+                v-model="formData.lastName"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-secondary mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="john.doe@example.com"
+              class="w-full px-4 py-3 rounded-lg bg-base-100 border border-base-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all hover:border-accent/50 focus:scale-[1.02]"
+              v-model="formData.email"
+              required
+            />
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="project-details" class="block text-sm font-medium text-secondary mb-2">
+              Message
+            </label>
+            <textarea
+              id="project-details"
+              name="project-details"
+              rows="6"
+              placeholder="Tell me about your project or inquiry..."
+              class="w-full px-4 py-3 rounded-lg bg-base-100 border border-base-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all resize-none hover:border-accent/50 focus:scale-[1.02]"
+              v-model="formData.projectDetails"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full sm:w-auto px-8 py-4 text-base font-medium text-white bg-accent hover:bg-accent/90 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+            :disabled="isLoading"
+          >
+            <span v-if="isLoading" class="loading loading-spinner loading-sm"></span>
+            <span>{{ isLoading ? "Sending..." : "Send Message" }}</span>
+            <svg v-if="!isLoading" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </form>
+
+        <!-- Messages de succès ou d'erreur -->
+        <Transition name="fade">
+          <div v-if="successMessage" class="mt-6 p-4 rounded-lg bg-success/10 border border-success/20">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="text-sm font-medium text-success">{{ successMessage }}</span>
+            </div>
+          </div>
+        </Transition>
+
+        <Transition name="fade">
+          <div v-if="errorMessage" class="mt-6 p-4 rounded-lg bg-error/10 border border-error/20">
+            <div class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span class="text-sm font-medium text-error">{{ errorMessage }}</span>
+            </div>
+          </div>
+        </Transition>
       </div>
+
     </div>
   </section>
 </template>
 
 <script>
-import { Phone, Mail, MapPin, Github, Linkedin } from "@iconoir/vue";
 import emailjs from "emailjs-com";
 
 export default {
   name: "ContactSection",
-  components: {
-    Phone,
-    Mail,
-    MapPin,
-    Github,
-    Linkedin,
-  },
   data() {
     return {
       successMessage: "",
@@ -234,8 +198,13 @@ export default {
 </script>
 
 <style scoped>
-.contact-section {
-  max-width: 1200px;
-  margin: 0 auto;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

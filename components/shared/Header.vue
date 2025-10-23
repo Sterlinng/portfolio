@@ -29,14 +29,13 @@
             <a href="/#about"><Emoji />{{ $t("navbar.about") }}</a>
           </li>
           <li>
-            <a href="/#technologies"><Cpu />{{ $t("navbar.technologies") }}</a>
+            <a href="/#projects"><Suitcase />{{ $t("navbar.projects") }}</a>
           </li>
           <li>
-            <a href="/#projects"><Suitcase />{{ $t("navbar.projects") }}</a>
+            <a href="/#contact"><Mail />{{ $t("navbar.contact") }}</a>
           </li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl" href="/">{{ $t("navbar.brand") }}</a>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
@@ -55,27 +54,28 @@
       </ul>
     </div>
     <div class="navbar-end">
-      <div class="dropdown" style="margin-right: 20px">
-        <div tabindex="0" role="button" class="btn btn-ghost hover:bg-base-200">
+      <div class="dropdown dropdown-end" style="margin-right: 20px">
+        <label tabindex="0" class="btn btn-ghost hover:bg-base-200 cursor-pointer">
           <Translate /><NavArrowDown />
-        </div>
+        </label>
         <ul
           tabindex="0"
-          class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+          class="dropdown-content menu bg-base-100 rounded-box z-[100] w-40 p-2 shadow mt-3"
         >
-          <li
-            v-for="lang in languages"
-            :key="lang.code"
-            @click="changeLanguage(lang.code)"
-          >
-            <a :class="{ 'bg-base-200': lang.code === currentLocale }">
+          <li v-for="lang in languages" :key="lang.code">
+            <a
+              href="#"
+              @click.prevent="changeLanguage(lang.code)"
+              :class="{ 'active bg-accent text-white': lang.code === currentLocale }"
+              class="hover:bg-base-200"
+            >
               {{ lang.label }}
             </a>
           </li>
         </ul>
       </div>
       <label class="swap swap-rotate" style="margin-right: 20px">
-        <input type="checkbox" class="theme-controller" value="retro" />
+        <input type="checkbox" @change="toggleTheme" :checked="isDark" />
         <svg
           class="swap-on h-6 w-6 fill-current"
           xmlns="http://www.w3.org/2000/svg"
@@ -100,10 +100,10 @@
 </template>
 
 <script setup>
+import { computed, ref, onMounted } from "vue";
 import {
   Home,
   Suitcase,
-  Cpu,
   Emoji,
   Translate,
   Mail,
@@ -124,5 +124,27 @@ const currentLocale = computed(() => locale.value);
 const changeLanguage = (lang) => {
   locale.value = lang;
   localStorage.setItem("preferredLanguage", lang);
+};
+
+// Theme management
+const isDark = ref(false);
+
+onMounted(() => {
+  // Check localStorage or system preference
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  isDark.value = savedTheme === "dark" || (!savedTheme && prefersDark);
+  applyTheme();
+});
+
+const toggleTheme = () => {
+  isDark.value = !isDark.value;
+  applyTheme();
+  localStorage.setItem("theme", isDark.value ? "dark" : "light");
+};
+
+const applyTheme = () => {
+  document.documentElement.setAttribute("data-theme", isDark.value ? "dark" : "light");
 };
 </script>

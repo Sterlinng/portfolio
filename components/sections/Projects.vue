@@ -1,68 +1,138 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 px-6 sm:px-12">
-    <div class="max-w-lg">
-      <div class="space-y-6">
-        <h2 class="text-3xl font-bold">{{ $t("aboutProjects.title") }}</h2>
-        <p class="text-gray-500">{{ $t("aboutProjects.description1") }}</p>
-        <p class="text-gray-500">
+  <section class="relative py-12 px-6 sm:px-12 lg:px-20">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Header -->
+      <div class="mb-10">
+        <h2 class="text-sm uppercase tracking-wider text-secondary font-semibold mb-4">{{ $t("sections.projects") }}</h2>
+
+        <!-- Discreet notice about confidential projects -->
+        <p class="text-xs italic text-secondary/60 max-w-3xl mb-8">
+          {{ $t("aboutProjects.description1") }}
           {{ $t("aboutProjects.description2") }}
-          <a href="#contact" class="font-bold text-primary">{{
-            $t("aboutProjects.contact")
-          }}</a
-          >.
+          <a href="#contact" class="text-accent hover:underline transition-all">{{ $t("aboutProjects.contact") }}</a>.
         </p>
       </div>
-    </div>
 
-    <div class="space-y-8">
-      <div
-        v-for="(project, index) in projects"
-        :key="index"
-        class="flex items-center justify-between pb-6 border-b border-base-300"
-      >
-        <div>
-          <h3 class="text-xl font-semibold">{{ $t(project.title) }}</h3>
-          <p class="italic text-sm text-gray-500 mb-2">{{ project.client }}</p>
-          <p class="text-sm text-gray-500 mb-2">{{ $t(project.subtitle) }}</p>
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="(tech, i) in project.technos"
-              :key="i"
-              class="rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium py-1 px-3"
+      <!-- Projects Grid (max 3 projects) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          v-for="(project, index) in projects.slice(0, 3)"
+          :key="index"
+          class="group cursor-pointer"
+          @click="handleProjectClick(project)"
+        >
+          <!-- Card with enhanced animations -->
+          <div class="relative overflow-hidden rounded-lg bg-base-200 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 hover:rotate-1">
+
+            <!-- Image -->
+            <div class="aspect-[4/3] overflow-hidden bg-base-300">
+              <img
+                v-if="project.coverImage"
+                :src="project.coverImage"
+                :alt="$t(project.title)"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div v-else class="w-full h-full flex items-center justify-center">
+                <span class="text-4xl text-base-content/20">📁</span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6">
+              <!-- Year and Client -->
+              <div class="flex items-center gap-3 mb-3 text-xs text-secondary">
+                <span>{{ project.year }}</span>
+                <span class="w-1 h-1 rounded-full bg-secondary"></span>
+                <span>{{ project.client }}</span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
+                {{ $t(project.title) }}
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm text-secondary mb-4 line-clamp-2">
+                {{ $t(project.shortDescription) }}
+              </p>
+
+              <!-- Technologies -->
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="(tech, i) in project.technos.slice(0, 3)"
+                  :key="i"
+                  class="text-xs px-2 py-1 rounded bg-base-300 text-secondary"
+                >
+                  {{ tech.name }}
+                </span>
+                <span
+                  v-if="project.technos.length > 3"
+                  class="text-xs px-2 py-1 text-secondary"
+                >
+                  +{{ project.technos.length - 3 }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Hover indicator (only if has external link) -->
+            <div
+              v-if="project.link && project.link !== '#'"
+              class="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              {{ tech.name }}
-            </span>
+              <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                <ArrowUpRight class="w-4 h-4 text-white" />
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div>
-          <a
-            v-if="!project.isConfidential"
-            :href="project.link"
-            target="_blank"
-            class="link link-hover flex items-center text-primary"
-          >
-            <ArrowUpRight />
-          </a>
-          <div
-            v-else
-            class="flex items-center text-gray-500 dark:text-gray-300"
-            :title="$t('projects.confidential')"
-          >
-            <Lock />
-          </div>
-        </div>
+      <!-- Footer with CTA -->
+      <div class="mt-12 text-center">
+        <!-- View More Button -->
+        <a
+          href="/projects"
+          class="inline-flex items-center gap-2 px-8 py-3 text-base font-medium text-primary bg-base-200 hover:bg-base-300 rounded-lg transition-all duration-300 hover:scale-105"
+        >
+          {{ $t("projects.archive") }}
+          <ArrowUpRight class="w-5 h-5" />
+        </a>
       </div>
-      <div style="margin-top: 20px; margin-bottom: 20px">
-        <a class="link link-hover" href="/projects">{{
-          $t("projects.archive")
-        }}</a>
-      </div>
+
     </div>
-  </div>
+
+    <!-- Project Modal -->
+    <ProjectModal
+      v-if="selectedProject"
+      :project="selectedProject"
+      :is-open="isModalOpen"
+      @close="closeModal"
+    />
+
+  </section>
 </template>
 
 <script setup>
-import { ArrowUpRight, Lock } from "@iconoir/vue";
+import { ref } from "vue";
+import { ArrowUpRight } from "@iconoir/vue";
 import projects from "~/assets/js/projects";
+import ProjectModal from "~/components/ui/ProjectModal.vue";
+
+const selectedProject = ref(null);
+const isModalOpen = ref(false);
+
+const handleProjectClick = (project) => {
+  // Ouvrir la modale avec les détails du projet
+  selectedProject.value = project;
+  isModalOpen.value = true;
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+  // Attendre la fin de l'animation avant de vider selectedProject
+  setTimeout(() => {
+    selectedProject.value = null;
+  }, 300);
+};
 </script>

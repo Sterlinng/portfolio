@@ -12,54 +12,53 @@
     }
   },
   "hero": {
-    "title": "Hello there! 👋🏽",
-    "description": {
-      "start": "I'm a software engineer based in",
-      "bordeaux": "Bordeaux",
-      "france": "France"
+    "badge": "Available",
+    "greeting": "Hi, I'm",
+    "name": "Amine Fodil-Cherif",
+    "title": "Software Engineer",
+    "company": "IPAN IPAN",
+    "location": "Bordeaux, France",
+    "cta": {
+      "primary": "Get in touch",
+      "secondary": "View projects"
     },
-    "imageAlt": "Bordeaux > Toulouse",
-    "button": "Say Hi",
-    "duckAlt": "Duck"
+    "social": {
+      "github": "Visit my GitHub profile",
+      "linkedin": "Connect on LinkedIn",
+      "email": "Send me an email"
+    }
   },
   "about": {
-    "introduction": {
-      "title": "A few words about me",
-      "name": "Amine FODIL-CHERIF",
-      "jobTitle": "software engineer",
-      "location": "Bordeaux",
-      "company": "IPAN IPAN",
-      "internalTeams": "internal teams",
-      "externalClients": "external clients",
-      "and": "and",
-      "paragraph1": {
-        "part1": "I'm",
-        "part2": "a",
-        "part3": "based in",
-        "part4": "currently working at",
-        "part5": "where I am responsible for developing applications for both"
-      },
-      "paragraph2": {
-        "part1": "I specialize in creating",
-        "streamlined": "streamlined",
-        "powerful": "powerful",
-        "intuitive": "highly intuitive",
-        "part2": "applications that optimize processes and improve user experiences"
+    "intro": {
+      "p1": "Hey ! I'm Amine, a software developer with 5+ years of full‑stack experience and a passion for building automation applications.",
+      "p2": "Right now, I'm working at ",
+      "p2end": ", where I build web & mobile applications for both internal teams and clients."
+    },
+    "experience": {
+      "title": "Experience",
+      "ipan": {
+        "role": "Software Engineer",
+        "company": "IPAN IPAN",
+        "period": "2023 - Present",
+        "description": "Development of intuitive and efficient user interfaces."
       }
     },
-    "timeline": {
+    "education": {
       "title": "Education",
       "cesi2024": {
-        "title": "CESI - Engineering School - 2024",
-        "description": "Master's - Manager in Software Application Architecture (In Progress)"
+        "degree": "Master's in Software Architecture",
+        "school": "CESI Engineering School",
+        "year": "2024 (In Progress)"
       },
       "cesi2023": {
-        "title": "CESI - Engineering School - 2023",
-        "description": "Bachelor's - Application Design and Development (Achieved)"
+        "degree": "Bachelor's in Software Development",
+        "school": "CESI Engineering School",
+        "year": "2023"
       },
       "esg2022": {
-        "title": "ESG - Business School - 2022",
-        "description": "Bachelor's - Business & Marketing (Achieved)"
+        "degree": "Bachelor's in Business & Operational Marketing",
+        "school": "ESG Business School",
+        "year": "2022"
       }
     }
   },
@@ -110,16 +109,65 @@
       "title": "Spotify Poster Maker",
       "context": "Personal",
       "description": "A web application that generates posters based on Spotify data."
+    },
+    "ipanFlow": {
+      "title": "Ipan Flow",
+      "context": "Professional",
+      "description": "Internal operations management platform centralizing order management, inventory tracking, shipping logistics, and e-commerce operations."
     }
   },
   "projectList": {
-    "spotifyPosterMaker": {
-      "title": "Spotify Poster Maker",
-      "subtitle": "A web application that generates posters based on Spotify data."
+    "etagsync": {
+      "title": "EtagSync",
+      "subtitle": "Cross-platform mobile app for NFC-based e-ink display management with native OS integration.",
+      "overview": "EtagSync is a Flutter-based mobile application that leverages NFC technology to enable content management for e-ink displays. Built for both Android and iOS, the app provides an interface for transferring images to e-ink hardware through native NFC capabilities.",
+      "context": "Developed for IPAN IPAN's digital signage solution targeting the CHR industry. The project required building a production-ready mobile application that could reliably communicate with e-ink displays via NFC, supporting both major mobile platforms with native hardware integration.",
+      "challenge": "This was my first experience with Flutter and mobile app development. The main technical challenges included: understanding Flutter's framework architecture, implementing native NFC functionality on both Android and iOS platforms (which have different NFC APIs), ensuring reliable data transfer protocols, and building a robust authentication system. The complexity was amplified by the need to bridge Flutter with platform-specific native code for NFC operations.",
+      "solution": "I took a methodical approach: started by developing separate native implementations for Android and iOS to deeply understand each platform's NFC capabilities and constraints. Then, I built Flutter bridges to unify these native implementations under a single cross-platform codebase. The architecture uses Auth0 for authentication, Firebase for crash analytics and monitoring, Provider for state management, and implements proper error handling for NFC communication failures. The result is a production-grade app with native performance and cross-platform compatibility.",
+      "results": "Successfully delivered a fully functional, production-ready application deployed on both Android and iOS. The app is currently integrated with IPAN IPAN's e-ink display hardware and ready for commercial deployment. This project significantly expanded my technical skillset, demonstrating the ability to quickly learn new frameworks and deliver complex cross-platform solutions involving hardware integration."
     },
-    "erpIntegration": {
-      "title": "ERP Integration",
-      "subtitle": "An internal application for the company I work for."
+    "postermaker": {
+      "title": "Spotify Poster Maker",
+      "subtitle": "Web application to create custom posters from Spotify data.",
+      "overview": "The Spotify Poster Maker is a web application that allows users to create personalized posters by choosing an Album.",
+      "context": "Developed as a personal project to explore React and data visualization using Spotify's API. The application enables users to generate visually appealing posters based on their favorite music albums.",
+      "challenge": "The challenge with this project was that I gave myself 48 hours to build the platform (as a personal challenge) , with a working API and a functional poster generator, all while learning to use React, which I had never used before."
+    },
+    "ipanipan": {
+      "title": "Ipan Ipan Website",
+      "subtitle": "Redesign of the company WordPress website using the ACF Plugin",
+      "overview": "The website of the company I work for was developed using WordPress. The redesign was needed to better reflect the brand’s identity and to incorporate new products, enhancing the overall user experience.",
+      "context": "The website redesign project for the company aimed not only to improve the brand image but also to add new products and enhance overall user engagement. The approach involved directly modifying the theme’s source code, leveraging Advanced Custom Fields to create content areas.",
+      "challenge": "The main challenge was working with a custom theme’s legacy codebase from 2020, which used unique methods and lacked documentation. Understanding and modifying this code without breaking existing functionality required careful navigation and precision.",
+      "solution": "The solution involved directly customizing the theme’s source code and leveraging Advanced Custom Fields (ACF) to add new content areas. This approach allowed control over the site's functionality and design while maintaining code clarity and stability.",
+      "results": "The redesign successfully improved the company’s website by clearly showcasing the brand identity and integrating new products."
+    },
+    "rerun": {
+      "title": "ReRun",
+      "subtitle": "Submission for the GTMK Game Jam 2025, with the theme 'Loop'.",
+      "overview": "An experimental game designed around the concept of looping, where the player's actions repeat to progress through levels.",
+      "context": "The game jam lasted 3 days and received 9,584 entries. The goal was to create a game within the given time frame that adhered to the theme Loop, offering a unique experience centered around this concept.",
+      "challenge": "The challenge was to create a complete game in just 3 days that incorporated the Loop theme while remaining original, given the high number of entries.",
+      "solution": "To stand out from other participants and offer an original take on the Loop theme, I decided to create a game that plays itself after the first level. Basically, the player controls the first level, then the following levels play automatically by repeating the movements from the first level, with slight variations. This invites the player to anticipate their actions blindly.",
+      "results": "After three days of development, the game was fairly complete with an average rank of 6021 and an average score of 2.571 (definitely not a blockbuster score, but hey, we're not here for the Oscars). The score doesn’t really matter to me because I had a lot of fun making this game, and participating in the GMTK Game Jam was an awesome experience."
+    },
+    "mcdo": {
+      "title": "Ordering Platform",
+      "subtitle": "Disk ordering platform for McDonald's in partnership with IPAN IPAN",
+      "overview": "An ordering platform developed for McDonald's France, allowing orders through SAT disks placed on tables. Each disk has a scannable QR code that facilitates table ordering directly from a smartphone.",
+      "context": "As a partner of Ipan Ipan, McDonald's France needed a secure ordering platform enabling each restaurant in the country to continuously order SAT disks (in case of destruction, theft, or other incidents). My role was to develop the platform on both client and server sides, ensuring smooth order management to meet McDonald's needs.",
+      "challenge": "The main challenge was, firstly, the lack of confidence in developing a platform for a company as large as McDonald's. Secondly, I had never created an e-commerce platform without using a CMS like Shopify or Squarespace, representing a significant technical and organizational challenge.",
+      "solution": "The solution proved simpler than expected: I clearly listed all the features to develop and realized it wasn't insurmountable, just a matter of organization and method.",
+      "results": "A secure and efficient platform used by McDonald's France franchisees when opening a new restaurant or to restock SAT disks in case of destruction, theft, or other incidents."
+    },
+    "ipanflow": {
+      "title": "Ipan Flow",
+      "subtitle": "Internal operations management platform for streamlining business workflows and automation",
+      "overview": "Ipan Flow is an internal operations management platform built for IPAN IPAN employees. The application centralizes and automates critical business workflows including order management, inventory tracking, shipping logistics, and e-commerce operations. By consolidating multiple processes into a unified interface, the platform significantly reduces manual work and accelerates team productivity across departments.",
+      "context": "Developed as an internal tool for IPAN IPAN to streamline daily operations across multiple business units. The platform needed to integrate with existing ERP systems, shipping carriers, and IoT devices while providing a user-friendly interface for non-technical staff. My role was to architect and develop both the frontend and backend systems, ensuring scalability, security, and seamless integration with third-party services.",
+      "challenge": "The main challenge was building a comprehensive platform that could handle diverse workflows—from automated purchase order generation to real-time inventory management—while maintaining simplicity for end users. The system needed to process and generate complex documents (PDFs, Excel files), fetch real-time shipping quotes from multiple carriers, generate QR codes for physical products, and provide intelligent inventory insights. Additionally, ensuring data security and proper access control for sensitive business information was paramount.",
+      "solution": "I built a full-stack solution using Nuxt 3 for the frontend with Ant Design Vue components, providing an intuitive and responsive interface. The backend leverages Quarkus (Java 17) for high performance and low resource consumption, with PostgreSQL for data persistence and Liquibase for database migrations. Key features include: automated PDF generation for purchase orders using PDFBox and OpenPDF, dynamic shipping quote fetching with carrier API integrations, customizable QR code generation with real-time preview, intelligent inventory tracking with low-stock alerts and replenishment recommendations, and Auth0-based authentication with role-based access control.",
+      "results": "The platform has been successfully deployed and is actively used by IPAN IPAN teams, delivering substantial time savings across operations. Teams can now generate fully populated purchase orders automatically, compare shipping quotes from multiple carriers instantly, manage inventory with real-time insights, and oversee e-commerce operations from a centralized dashboard. The system's automation capabilities have eliminated hours of manual data entry and reduced operational errors, while the intuitive interface has ensured high user adoption without extensive training."
     }
   },
   "sections": {
@@ -137,5 +185,14 @@
     "view": "View",
     "notAvailable": "Not Available",
     "title": "All Projects"
+  },
+  "projectsPage": {
+    "title": "All Projects",
+    "subtitle": "A collection of my professional and personal work.",
+    "tabs": {
+      "professional": "Professional",
+      "personal": "Personal"
+    },
+    "emptyState": "No {tab} projects yet."
   }
 }

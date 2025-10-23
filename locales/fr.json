@@ -12,54 +12,53 @@
     }
   },
   "hero": {
-    "title": "Salut ! 👋🏽",
-    "description": {
-      "start": "Je suis un développeur logiciel basé à",
-      "bordeaux": "Bordeaux",
-      "france": "France"
+    "badge": "Disponible",
+    "greeting": "Bonjour, je suis",
+    "name": "Amine Fodil-Cherif",
+    "title": "Ingénieur Logiciel",
+    "company": "IPAN IPAN",
+    "location": "Bordeaux, France",
+    "cta": {
+      "primary": "Me contacter",
+      "secondary": "Voir mes projets"
     },
-    "imageAlt": "Bordeaux > Toulouse",
-    "button": "Dire Bonjour",
-    "duckAlt": "Canard"
+    "social": {
+      "github": "Visiter mon profil GitHub",
+      "linkedin": "Me retrouver sur LinkedIn",
+      "email": "M'envoyer un email"
+    }
   },
   "about": {
-    "introduction": {
-      "title": "Quelques mots sur moi",
-      "name": "Amine FODIL-CHERIF",
-      "jobTitle": "ingénieur logiciel",
-      "location": "Bordeaux",
-      "company": "IPAN IPAN",
-      "internalTeams": "équipes internes",
-      "externalClients": "clients externes",
-      "and": "et",
-      "paragraph1": {
-        "part1": "Je suis",
-        "part2": "un",
-        "part3": "basé à",
-        "part4": "travaillant actuellement chez",
-        "part5": "où je suis responsable du développement d'applications pour"
-      },
-      "paragraph2": {
-        "part1": "Je me spécialise dans la création d'applications",
-        "streamlined": "optimisées",
-        "powerful": "puissantes",
-        "intuitive": "très intuitives",
-        "part2": "qui optimisent les processus et améliorent l'expérience utilisateur"
+    "intro": {
+      "p1": "Salut ! Je suis Amine, un développeur logiciel avec plus de 5 ans d’expérience en développement full‑stack et un penchant pour la création d’applications d’automatisation.",
+      "p2": "Actuellement, je travaille chez ",
+      "p2end": ", où je développe des applications web & mobile pour les équipes internes et les clients."
+    },
+    "experience": {
+      "title": "Expérience",
+      "ipan": {
+        "role": "Ingénieur Logiciel",
+        "company": "IPAN IPAN",
+        "period": "2023 - Aujourd'hui",
+        "description": "Développement d’interfaces utilisateur intuitives et efficaces."
       }
     },
-    "timeline": {
+    "education": {
       "title": "Formation",
       "cesi2024": {
-        "title": "CESI - École d'Ingénieurs - 2024",
-        "description": "Master - Manager en Architecture Logicielle (En cours)"
+        "degree": "Master en Architecture Logicielle",
+        "school": "École d'Ingénieurs CESI",
+        "year": "2024 (En cours)"
       },
       "cesi2023": {
-        "title": "CESI - École d'Ingénieurs - 2023",
-        "description": "Bachelor - Conception et Développement d'Applications (Validé)"
+        "degree": "Bachelor Développement Logiciel",
+        "school": "École d'Ingénieurs CESI",
+        "year": "2023"
       },
       "esg2022": {
-        "title": "ESG - École de Commerce - 2022",
-        "description": "Bachelor - Business & Marketing (Validé)"
+        "degree": "Bachelor Commerce & Marketing Opérationnel",
+        "school": "ESG Business School",
+        "year": "2022"
       }
     }
   },
@@ -110,16 +109,65 @@
       "title": "Générateur de Posters Spotify",
       "context": "Personnel",
       "description": "Un générateur de posters Spotify, permettant de créer des posters personnalisées à partir de données Spotify."
+    },
+    "ipanFlow": {
+      "title": "Ipan Flow",
+      "context": "Professionnel",
+      "description": "Plateforme interne de gestion des opérations centralisant la gestion des commandes, le suivi des inventaires, la logistique d'expédition et les opérations e-commerce."
     }
   },
   "projectList": {
-    "orderingPlatform": {
-      "title": "Plateforme de commande",
-      "subtitle": "Une application de commande pour McDonald's en partenariat avec l'entreprise pour laquelle je travaille."
+    "etagsync": {
+      "title": "EtagSync",
+      "subtitle": "Application mobile cross-platform pour la gestion d'écrans e-ink via NFC avec intégration native OS.",
+      "overview": "EtagSync est une application mobile développée en Flutter qui exploite la technologie NFC pour permettre une gestion du contenu sur des écrans e-ink. Construite pour Android et iOS, l'app offre une interface pour transférer des images vers du matériel e-ink via les capacités NFC natives.",
+      "context": "Développée pour la solution de signalétique digitale d'IPAN IPAN ciblant l'industrie CHR. Le projet nécessitait la construction d'une application mobile prête pour la production, capable de communiquer de manière fiable avec des écrans e-ink via NFC, supportant les deux principales plateformes mobiles avec intégration matérielle native.",
+      "challenge": "C'était ma première expérience avec Flutter et le développement mobile. Les principaux défis techniques incluaient : comprendre l'architecture du framework Flutter, implémenter la fonctionnalité NFC native sur Android et iOS (qui ont des APIs NFC différentes), assurer des protocoles de transfert de données fiables, et construire un système d'authentification robuste. La complexité était amplifiée par le besoin de créer des bridges entre Flutter et le code natif spécifique à chaque plateforme pour les opérations NFC.",
+      "solution": "J'ai adopté une approche méthodique : j'ai commencé par développer des implémentations natives séparées pour Android et iOS afin de comprendre en profondeur les capacités et contraintes NFC de chaque plateforme. Ensuite, j'ai construit des bridges Flutter pour unifier ces implémentations natives sous une seule codebase cross-platform. L'architecture utilise Auth0 pour l'authentification, Firebase pour l'analyse des crashs et le monitoring, Provider pour la gestion d'état, et implémente une gestion d'erreur appropriée pour les échecs de communication NFC. Le résultat est une app production-grade avec des performances natives et une compatibilité cross-platform.",
+      "results": "J'ai livré avec succès une application complètement fonctionnelle et prête pour la production, déployée sur Android et iOS. L'app est actuellement intégrée avec le matériel d'écrans e-ink d'IPAN IPAN et prête pour le déploiement commercial. Ce projet a significativement élargi mes compétences techniques, démontrant ma capacité à apprendre rapidement de nouveaux frameworks et à livrer des solutions cross-platform complexes impliquant de l'intégration matérielle."
     },
-    "spotifyPosterMaker": {
+    "postermaker": {
       "title": "Générateur de Posters Spotify",
-      "subtitle": "Un générateur de posters Spotify, permettant de créer des posters personnalisées à partir de données Spotify."
+      "subtitle": "Application web pour créer des posters personnalisés à partir de données Spotify.",
+      "overview": "Spotify Poster Maker est une application web qui permet aux utilisateurs de créer des posters personnalisés en choisissant un album.",
+      "context": "Développée en tant que projet personnel pour explorer React et la visualisation de données en utilisant l'API de Spotify. L'application permet aux utilisateurs de générer des posters visuellement attrayants basés sur leurs albums de musique préférés.",
+      "challenge": "Le défi de ce projet, c’était que je m’étais donné seulement 48 heures pour créer la plateforme — avec une API fonctionnelle et un générateur de poster opérationnel — tout en utilisant React pour la première fois."
+    },
+    "ipanipan": {
+      "title": "Site Web Ipan Ipan",
+      "subtitle": "Refonte du site WordPress de l’entreprise avec le plugin ACF",
+      "overview": "Le site de l’entreprise pour laquelle je travaille a été développé avec WordPress. La refonte était nécessaire pour mieux refléter l’identité de la marque et intégrer de nouveaux produits, améliorant ainsi l’expérience utilisateur globale.",
+      "context": "Le projet de refonte du site visait non seulement à améliorer l’image de marque, mais aussi à ajouter de nouveaux produits et à renforcer l’engagement des utilisateurs. L’approche consistait à modifier directement le code source du thème en tirant parti d’Advanced Custom Fields pour créer des zones de contenu.",
+      "challenge": "Le principal défi était de travailler sur une base de code legacy d’un thème personnalisé datant de 2020, utilisant des méthodes propres et peu documentées. Comprendre et modifier ce code sans casser les fonctionnalités existantes demandait une navigation et une précision attentives.",
+      "solution": "La solution a consisté à personnaliser directement le code source du thème et à utiliser Advanced Custom Fields (ACF) pour ajouter de nouvelles zones de contenu. Cette approche a permis de contrôler la fonctionnalité et le design du site tout en maintenant la clarté et la stabilité du code.",
+      "results": "La refonte a permis d’améliorer le site de l’entreprise en mettant clairement en valeur l’identité de la marque et en intégrant de nouveaux produits."
+    },
+    "rerun": {
+      "title": "ReRun",
+      "subtitle": "Jeu réalisé pour la GTMK Game Jam 2025, avec come thème 'Loop'.",
+      "overview": "Un jeu expérimental conçu autour du concept de boucle, où les actions du joueur se répètent pour progresser à travers les niveaux.",
+      "context": "La game jam a duré 3 jours et a reçu 9 584 participations. L’objectif était de créer un jeu respectant le thème Loop dans le temps imparti, en proposant une expérience originale autour de ce concept.",
+      "challenge": "Le défi était de créer un jeu complet en seulement 3 jours, intégrant le thème Loop, tout en restant original face au grand nombre de participations.",
+      "solution": "Pour me démarquer des autres participants et proposer une approche originale du thème Loop, j’ai décidé de créer un jeu qui se joue seul après le premier niveau. En résumé, le joueur contrôle le premier niveau, puis les niveaux suivants se jouent automatiquement en reproduisant les mouvements du premier, avec des variations légères. Cela invite le joueur à anticiper ses actions à l’aveugle.",
+      "results": "Après trois jours de développement, le jeu était assez complet avec un classement moyen de 6021 et un score moyen de 2,571 (ce qui est loin d’être un feu d’artifice, mais bon, on n’est pas là pour les Oscars). Le score m’importe peu, car j’ai pris beaucoup de plaisir à créer ce jeu, et participer à la GMTK Game Jam a été une expérience vraiment géniale."
+    },
+    "mcdo": {
+      "title": "Plateforme de Commande",
+      "subtitle": "Plateforme de commande de disques pour McDonald's en partenariat avec IPAN IPAN",
+      "overview": "Une plateforme de commande développée pour McDonald's France, permettant de commander via des disques SAT placés sur les tables. Chaque disque possède un QR code scannable qui facilite la commande à table directement depuis le smartphone.",
+      "context": "Partenaire d'Ipan Ipan, McDonald's France avait besoin d'une plateforme de commande sécurisée permettant à chaque restaurant du pays de commander des disques SAT en continu (en cas de destruction, de vol ou autres incidents). Mon rôle était de développer cette plateforme côté client et serveur, garantissant une gestion des commandes pour répondre aux besoins de McDonald's.",
+      "challenge": "Le principal défi de ce projet était, d'une part, le manque de confiance en moi pour développer une plateforme destinée à une entreprise aussi importante que McDonald's. D'autre part, je n'avais jamais créé de plateforme « e-commerce » sans utiliser de CMS comme Shopify ou Squarespace, ce qui représentait un challenge technique et organisationnel majeur.",
+      "solution": "La solution s'est avérée plus simple que prévu : j'ai listé clairement toutes les fonctionnalités à développer, et j'ai réalisé que ce n'était pas du tout insurmontable, mais juste une question d'organisation et de méthode.",
+      "results": "Une plateforme sécurisée et performante, utilisée par les franchisés McDonald's France lors de l'ouverture d'un nouveau restaurant ou pour le réapprovisionnement des disques SAT en cas de destruction, vol ou autre incident."
+    },
+    "ipanflow": {
+      "title": "Ipan Flow",
+      "subtitle": "Plateforme interne de gestion des opérations pour optimiser les workflows et l'automatisation",
+      "overview": "Ipan Flow est une plateforme de gestion des opérations internes développée pour les employés d'IPAN IPAN. L'application centralise et automatise les workflows critiques de l'entreprise, incluant la gestion des commandes, le suivi des inventaires, la logistique d'expédition et les opérations e-commerce. En regroupant plusieurs processus dans une interface unifiée, la plateforme réduit considérablement le travail manuel et accélère la productivité des équipes à travers les départements.",
+      "context": "Développée comme outil interne pour IPAN IPAN afin de rationaliser les opérations quotidiennes à travers plusieurs unités commerciales. La plateforme devait s'intégrer avec les systèmes ERP existants, les transporteurs et les appareils IoT tout en offrant une interface conviviale pour le personnel non technique. Mon rôle était d'architecturer et de développer les systèmes frontend et backend, en garantissant la scalabilité, la sécurité et l'intégration fluide avec les services tiers.",
+      "challenge": "Le principal défi était de construire une plateforme complète capable de gérer des workflows divers — de la génération automatique de bons de commande à la gestion d'inventaire en temps réel — tout en maintenant la simplicité pour les utilisateurs finaux. Le système devait traiter et générer des documents complexes (PDFs, fichiers Excel), récupérer des devis d'expédition en temps réel auprès de plusieurs transporteurs, générer des QR codes pour les produits physiques et fournir des insights intelligents sur l'inventaire. De plus, garantir la sécurité des données et un contrôle d'accès approprié pour les informations commerciales sensibles était primordial.",
+      "solution": "J'ai construit une solution full-stack utilisant Nuxt 3 pour le frontend avec les composants Ant Design Vue. Le backend exploite Quarkus (Java 17) pour des performances élevées et une faible consommation de ressources, avec PostgreSQL pour la persistance des données et Liquibase pour les migrations de base de données. Les fonctionnalités clés incluent : génération automatique de PDFs pour les bons de commande avec PDFBox et OpenPDF, récupération dynamique de devis d'expédition avec intégrations d'APIs de transporteurs, génération de QR codes personnalisables avec aperçu en temps réel, suivi intelligent des inventaires avec alertes de stock faible et recommandations de réapprovisionnement, et authentification basée sur Auth0 avec contrôle d'accès par rôle.",
+      "results": "La plateforme a été déployée avec succès et est activement utilisée par les équipes d'IPAN IPAN, offrant des gains de temps substantiels sur les opérations. Les équipes peuvent désormais générer des bons de commande entièrement remplis automatiquement, comparer les devis d'expédition de plusieurs transporteurs instantanément, gérer l'inventaire avec des insights en temps réel et superviser les opérations e-commerce depuis un tableau de bord centralisé. Les capacités d'automatisation du système ont éliminé des heures de saisie manuelle de données et réduit les erreurs opérationnelles, tandis que l'interface intuitive a assuré une adoption élevée sans formation extensive."
     }
   },
   "sections": {
@@ -137,5 +185,14 @@
     "view": "Voir",
     "notAvailable": "Non disponible",
     "title": "Projets"
+  },
+  "projectsPage": {
+    "title": "Tous mes Projets",
+    "subtitle": "Une collection de mes travaux professionnels et personnels.",
+    "tabs": {
+      "professional": "Professionnel",
+      "personal": "Personnel"
+    },
+    "emptyState": "Aucun projet {tab} pour le moment."
   }
 }

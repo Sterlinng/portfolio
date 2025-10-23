@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/amine/Desktop/Amine/ipanipan/etagsync/**)",
+      "Read(//c/Users/amine/Desktop/Amine/ipanipan/ipanipan-app/**)",
+      "Read(//c/Users/amine/Desktop/Amine/ipanipan/ipan-flow-back/**)",
+      "Bash(git checkout:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
