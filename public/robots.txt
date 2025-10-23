@@ -1,1 +1,32 @@
+# robots.txt for aminefodilcherif.com
+# This file tells search engine crawlers which pages they can and cannot access
 
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://aminefodilcherif.com/sitemap.xml
+
+# Disallow specific paths if needed (uncomment to use)
+# Disallow: /api/
+# Disallow: /admin/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

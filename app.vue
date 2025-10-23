@@ -1,19 +1,73 @@
 <template>
   <div class="layout">
-    <!-- Global dot pattern background -->
-    <div class="dot-pattern-background"></div>
+    <!-- Page Loader -->
+    <PageLoader />
 
-    <Header />
-    <main class="content">
-      <NuxtPage />
-    </main>
-    <Footer />
+    <!-- Main content - hidden while loading -->
+    <div v-show="!isPageLoading" class="page-wrapper">
+      <!-- Global dot pattern background -->
+      <div class="dot-pattern-background"></div>
+
+      <Header />
+      <main class="content">
+        <NuxtPage />
+      </main>
+      <Footer />
+    </div>
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 import Header from "../components/shared/Header.vue";
 import Footer from "../components/shared/Footer.vue";
+import PageLoader from "../components/ui/PageLoader.vue";
+
+const isPageLoading = ref(true);
+let loadingTimeout = null;
+
+onMounted(() => {
+  // Hide loader after initial page load
+  setTimeout(() => {
+    isPageLoading.value = false;
+  }, 300);
+});
+
+// Listen to Nuxt page loading events
+if (process.client) {
+  const nuxtApp = useNuxtApp();
+
+  nuxtApp.hook('page:start', () => {
+    if (loadingTimeout) {
+      clearTimeout(loadingTimeout);
+    }
+    isPageLoading.value = true;
+  });
+
+  nuxtApp.hook('page:finish', () => {
+    loadingTimeout = setTimeout(() => {
+      isPageLoading.value = false;
+    }, 300);
+  });
+
+  // Also listen to route changes
+  const router = useRouter();
+
+  router.beforeEach((to, from) => {
+    if (to.path !== from.path) {
+      if (loadingTimeout) {
+        clearTimeout(loadingTimeout);
+      }
+      isPageLoading.value = true;
+    }
+  });
+
+  router.afterEach(() => {
+    loadingTimeout = setTimeout(() => {
+      isPageLoading.value = false;
+    }, 300);
+  });
+}
 </script>
 
 <style>
